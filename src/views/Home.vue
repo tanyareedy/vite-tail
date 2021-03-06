@@ -7,7 +7,7 @@
       Export to PDF
     </button>
 
-    <div class="border-line">
+    <div class="">
       <main class="bg-gray-50">
         <!--    company information -->
         <section class="grid grid-cols-3">
@@ -19,11 +19,13 @@
                     {{ companyInfo.address }}
                   </h4>
                   <div class="text-xs">
-                    <h5>{{ companyInfo.poBox }}</h5>
-                    <h5>{{ companyInfo.country }}</h5>
-                    <h5>Phone No: {{ companyInfo.phoneNo }}</h5>
-                    <h5>Email:{{ companyInfo.email }}</h5>
-                    <h5>VAT Registration No:{{ companyInfo.vatReg }}</h5>
+                    <ul class="space-y-2">
+                      <li>{{ companyInfo.poBox }}</li>
+                      <li>{{ companyInfo.country }}</li>
+                      <li>Phone No: {{ companyInfo.phoneNo }}</li>
+                      <li>Email:{{ companyInfo.email }}</li>
+                      <li>VAT Registration No:{{ companyInfo.vatReg }}</li>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -49,20 +51,61 @@
           </div>
           <div class="pl-10">Company Logo</div>
         </section>
+        <!--    company information -->
 
-        <section>
-          <div>
-            <div>itme</div>
-            <div>
-              <div>ite,</div>
-              <div>ite,</div>
+        <!--        customer information-->
+        <section class="">
+          <div class="grid grid-cols-3 border-line p-2">
+            <div class="col-span-2 text-sm">
+              <h3 class="uppercase">{{ customerInfo.fullname }}</h3>
+              <h3 class="uppercase w-44">{{ customerInfo.address }}</h3>
+              <p class="pt-8">{{ customerInfo.phone }}</p>
+            </div>
+            <div class="text-sm">
+              <table>
+                <tr>
+                  <td class="pr-8">Account Number</td>
+                  <td>:DUTYAEDTU</td>
+                </tr>
+                <tr>
+                  <td>Invoice Number</td>
+                  <td>:D06981204</td>
+                </tr>
+                <tr>
+                  <td>HWB Number</td>
+                  <td>:2649676901</td>
+                </tr>
+                <tr>
+                  <td>Date</td>
+                  <td>17/02/2021</td>
+                </tr>
+                <tr>
+                  <td>payment Due Date</td>
+                  <td>17/02/2021</td>
+                </tr>
+              </table>
             </div>
           </div>
         </section>
-        <!--    company information -->
+        <!--        customer information-->
+
+        <!--        shipment details-->
+        <section class="py-1">
+          <p class="text-center">
+            Please Reimburse the Total Charges Shown Below To:
+            {{ companyInfo.address }}
+          </p>
+          <div class="border-line">
+            <h2 class="text-center font-medium text-xl">Shipment Details</h2>
+          </div>
+          <div class="border-line">
+            <div class="p-10"></div>
+          </div>
+        </section>
+        <!--        shipment details-->
       </main>
 
-      <img class="mt-40" src="@/assets/processed.jpeg" />xw
+      <img class="mt-10" src="@/assets/processed.jpeg" />xw
     </div>
   </div>
 </template>
@@ -80,6 +123,11 @@ export default {
         phoneNo: "+971 2 426905",
         email: "billing-query.ae@dhl.com",
         vatReg: "100255554600003"
+      },
+      customerInfo: {
+        fullname: "Ronald Weasely",
+        address: `Jumeira village circle (JVC) UAE DUBAI`,
+        phone: "+971 2 426905"
       },
       item: { format: "auto", value: 1610233004732, height: 5 }
     };
@@ -104,6 +152,6 @@ export default {
 
 <style scoped>
 .border-line {
-  @apply border border-2 border-indigo-100;
+  @apply border border-2 border-gray-600;
 }
 </style>
