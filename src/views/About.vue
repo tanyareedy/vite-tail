@@ -29,5 +29,5 @@
 <script setup>
 // see the classic version in Home.vue
 // VSCode Vetur ext may show a warning, it doesn't support this syntax yet
-import ButtonRepo from '@/components/ButtonRepo.vue'
+import ButtonRepo from "@/components/ButtonRepo.vue";
 </script>
